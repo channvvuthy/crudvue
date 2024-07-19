@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native App</title>
+</head>
+<body>
+    <h1>List all of users</h1>
+    <div id="displayUsers"></div>
+
+    <button onclick="addMyName()">Addd my name</button>
+</body>
+
+
+<script>
+    var users = ["nasrim", "mony", "sovanna", "channtha"];
+
+    var startUlTag = "<ul>";
+    var endUlTag = "</ul>";
+    var startLiTa ="<li>";
+    var endLiTag = "</li>";
+    var str = "";
+
+    var displayUsers = document.getElementById("displayUsers");
+
+   
+    for(var index = 0; index < users.length; index++){
+        str += startLiTa + users[index] + endLiTag;
+    }
+
+    // "<ul><li>nasrim</li><li>mony</li><li>sovanna</li><li>channtha</li></ul>"
+    displayUsers.innerHTML = startUlTag + str + endUlTag;
+
+    function addMyName(){
+        var myName = "vuthy";
+        displayUsers.after("<li>"+myName+"</li>")
+
+        
+    }
+
+
+
+
+</script>
+</html>
